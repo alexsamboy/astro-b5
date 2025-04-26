@@ -1,0 +1,24 @@
+---
+    import Card from "./Card.astro";
+
+  const { index, titleTop, titleBottom, img, alt, link } = Astro.props;
+---
+
+  <Card>
+    <a href={link} class="position-absolute z-1" title={titleTop} aria-label="Ir al enlace" aria-hidden="true" style="inset: 0;"></a>
+    <img class="object-fit-cover" src={img.src} alt="A bird sitting on a nest of eggs.">
+    <div class="card-img-overlay bg-dark text-white d-flex flex-column justify-content-end" style="--bs-bg-opacity: .3;">
+      <h5 class="card-title fs-4 fw-normal">{titleTop}<span class="d-block fw-bold fs-2">{titleBottom}</span></h5>
+      
+      <p class="card-text"><small>Last updated 3 mins ago</small></p>
+    </div>
+  </Card>
+  <style>
+  .card-title::after {
+    content: " ";
+    display: block;
+    border-bottom: 6px solid yellow !important;
+    width: 63px !important;
+    margin-top: 15px;
+}
+  </style>

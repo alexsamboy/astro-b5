@@ -1,0 +1,68 @@
+---
+  import SectionTitle from '../ui/SectionTitle.astro';
+  import ProgramCards from '../ui/ProgramCards.astro';
+  import Section from '../sections/Section.astro';
+
+  import c1 from "../../assets/pics/grado.jpg";
+  import c2 from "../../assets/pics/postgrado.jpg";
+  import c3 from "../../assets/pics/on-line.jpg";
+  import c4 from "../../assets/pics/tep.jpg";
+
+  const cards = [
+  {
+    index: 1,
+    titleTop: "Programas de",
+    titleBottom: "Grado",
+    img: c1,
+    alt: "SEO",
+    link: "https://pucmm.edu.do/academico/oferta-grado",
+  },
+  {
+    index: 2,
+    titleTop: "Programas de",
+    titleBottom: "Postgrado",
+    img: c2,
+    alt: "SEO",
+    link: "https://pucmm.edu.do/postgrado/Paginas/Programas.aspx",
+  },
+  {
+    index: 3,
+    titleTop: "Postgrados en",
+    titleBottom: "Línea",
+    img:c3 ,
+    alt: "SEO",
+    link: "https://online.pucmm.edu.do/?utm_source=referral&utm_medium=institutional&utm_campaign=oferta-bottom-banner",
+  },
+  {
+    index: 4,
+    titleTop: "Técnico",
+    titleBottom: "Superior",
+    img:c4 ,
+    alt: "SEO",
+    link: "https://tep.pucmm.edu.do/carreras-tecnico-superior",
+  },
+];
+
+  const titulo ='¡Transforma tu Futuro con Nuestros Programas Académicos!';
+  const description =
+  "Explora nuestras opciones y elige el camino que mejor se adapte a tus sueños y aspiraciones.";
+---
+
+ <Section id="academic-programs">
+    <SectionTitle sectionTitle={titulo} description={description} />
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4"> 
+    {
+        cards.map((card) => (
+          <div class="col">
+          <ProgramCards
+            index={card.index}
+            titleTop={card.titleTop}
+            titleBottom={card.titleBottom}
+            img={card.img}
+            alt={card.alt}
+            link={card.link}
+          /></div>
+        ))
+      }
+  </div>
+</Section>

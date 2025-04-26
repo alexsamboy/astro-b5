@@ -1,0 +1,23 @@
+---
+    import Card from "./Card.astro";
+
+  const { index, titleTop, titleBottom, img, alt, link } = Astro.props;
+---
+
+  <Card>
+    <div class="row g-0 py-3" style="height:150px;">
+    <div class="col-md-4 overflow-hidden">
+      <a href={link} class="h-100" title={titleTop} aria-label="Ir al enlace" aria-hidden="true" style="inset: 0;">
+      <img class="img-fluid object-fit-fill rounded-start" src={img} alt="A bird sitting on a nest of eggs."></a>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h3 class="card-title fs-6 fw-bold lh-sm m-0">{titleTop}</h3>
+        <p class="card-text m-0 mb-1"><small class="text-body-secondary">
+        <time datetime="08:00">08:00 a. m.</time>
+         | Auditorio de Ciencias de la Salud | <abbr title="Campus de Santiago">CSTI</abbr></small></p>
+        <a href="#" class="btn btn-primary btn-sm">Agendar</a>
+      </div>
+    </div>
+  </div>
+  </Card>

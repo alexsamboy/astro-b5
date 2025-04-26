@@ -1,0 +1,68 @@
+---
+  import SectionTitle from '../ui/SectionTitle.astro';
+  import NewsNote from '../ui/NewsNote.astro';
+  import Section from '../sections/Section.astro';
+
+  import c1 from "../../assets/pics/grado.jpg";
+  import c2 from "../../assets/pics/postgrado.jpg";
+  import c3 from "../../assets/pics/on-line.jpg";
+  import c4 from "../../assets/pics/tep.jpg";
+  const img = 'https://prensa.pucmm.edu.do/wp-content/uploads/2025/04/0B0A7348-768x397.webp';
+  const cards = [
+  {
+    index: 1,
+    titleTop: "PUCMM inician la Semana de Innovación y Propiedad Intelectual, enfocada en la música",
+    titleBottom: "Grado",
+    img: img,
+    alt: "SEO",
+    link: "https://pucmm.edu.do/academico/oferta-grado",
+  },
+  {
+    index: 2,
+    titleTop: "PUCMM invita a vivir la Semana Santa en oración, reflexión y solidaridad",
+    titleBottom: "Postgrado",
+    img: img,
+    alt: "SEO",
+    link: "https://pucmm.edu.do/postgrado/Paginas/Programas.aspx",
+  },
+  {
+    index: 3,
+    titleTop: "Testimonios: comunidad de PUCMM se unió en labores de servicio y rescate en tragedia del Jet Set",
+    titleBottom: "Línea",
+    img:img ,
+    alt: "SEO",
+    link: "https://online.pucmm.edu.do/?utm_source=referral&utm_medium=institutional&utm_campaign=oferta-bottom-banner",
+  },
+  {
+    index: 4,
+    titleTop: "PUCMM, única universidad dominicana en participar en eMerge Americas 2025",
+    titleBottom: "Superior",
+    img:img ,
+    alt: "SEO",
+    link: "https://tep.pucmm.edu.do/carreras-tecnico-superior",
+  },
+];
+
+  const titulo ='Noticias';
+  const description =
+  "Explora nuestras opciones y elige el camino que mejor se adapte a tus sueños y aspiraciones.";
+---
+
+ <Section id="academic-programs">
+    <SectionTitle sectionTitle={titulo} description={description} />
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4"> 
+    {
+        cards.map((card) => (
+          <div class="col">
+          <NewsNote
+            index={card.index}
+            titleTop={card.titleTop}
+            titleBottom={card.titleBottom}
+            img={card.img}
+            alt={card.alt}
+            link={card.link}
+          /></div>
+        ))
+      }
+  </div>
+</Section>

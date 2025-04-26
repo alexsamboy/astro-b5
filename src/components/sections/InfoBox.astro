@@ -1,0 +1,17 @@
+---
+  import SectionTitle from '../ui/SectionTitle.astro';
+  import Section from '../sections/Section.astro';
+  import Agenda from '../sections/Agenda.astro';
+
+  const titulo ='¡Agenda avisos!';
+  const description =
+  "Explora nuestras opciones y elige el camino que mejor se adapte a tus sueños y aspiraciones.";
+---
+
+  <Section id="infobox">
+    <SectionTitle sectionTitle={titulo} description={description} />
+    <div class="row row-cols-1 row-cols-sm-2 g-3">
+    <Agenda />
+    <Agenda />
+    </div>
+</Section>

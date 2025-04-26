@@ -1,0 +1,65 @@
+---
+  import SectionTitle from '../ui/SectionTitle.astro';
+  import AgendaCard from '../ui/AgendaCard.astro';
+  import Section from '../sections/Section.astro';
+
+  const event = 'https://pucmm.edu.do/PublishingImages/grado.jpg';
+
+  const cards = [
+  {
+    index: 1,
+    titleTop: "Conferencia | Salud mental en las Aulas: Estrategias y Herramientas de Acción",
+    titleBottom: "Grado",
+    img: event,
+    alt: "SEO",
+    link: "https://pucmm.edu.do/academico/oferta-grado",
+  },
+  {
+    index: 2,
+    titleTop: "Entrega de Plaquitas Médicos Internos de la Escuela de Medicina | CSTI",
+    titleBottom: "Postgrado",
+    img: event,
+    alt: "SEO",
+    link: "https://pucmm.edu.do/postgrado/Paginas/Programas.aspx",
+  },
+  {
+    index: 3,
+    titleTop: "Ceremonia de Bata Blanca de la Escuela de Estomatología | CSTI",
+    titleBottom: "Línea",
+    img:event ,
+    alt: "SEO",
+    link: "https://online.pucmm.edu.do/?utm_source=referral&utm_medium=institutional&utm_campaign=oferta-bottom-banner",
+  },
+  {
+    index: 4,
+    titleTop: "Ceremonia de Bata Blanca de la Escuela de Estomatología | CSD",
+    titleBottom: "Superior",
+    img:event,
+    alt: "SEO",
+    link: "https://tep.pucmm.edu.do/carreras-tecnico-superior",
+  },
+];
+
+  const titulo ='Agenda PUCMM';
+  const description = "Explora nuestras opciones y elige el camino que mejor se adapte a tus sueños y aspiraciones.";
+---
+
+ <Section id="agenda-pucmm">
+    <SectionTitle sectionTitle={titulo} description={description} />
+    <div class="row row-cols-1">
+    <div class="col"> 
+    {
+        cards.map((card) => (
+          <AgendaCard
+            index={card.index}
+            titleTop={card.titleTop}
+            titleBottom={card.titleBottom}
+            img={card.img}
+            alt={card.alt}
+            link={card.link}
+          />
+        ))
+      }
+      </div>
+  </div>
+</Section>
