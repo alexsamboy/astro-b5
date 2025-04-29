@@ -1,14 +1,15 @@
 ---
     import Note from "./Note.astro";
 
-  const { index, titleTop, titleBottom, img, alt, link } = Astro.props;
+  const { index, titleTop, date, img, alt, link } = Astro.props;
 ---
 
   <Note>
-    <a href={link} class="position-absolute z-1" title={titleTop} aria-label="Ir al enlace" aria-hidden="true" style="inset: 0;"></a>
-    <img class="object-fit-cover img-fluid" src={img} alt="A bird sitting on a nest of eggs.">
+    <a href={link} class="" title={titleTop} aria-label="Ir al enlace" aria-hidden="true" style="inset: 0;">
+    <img class="object-fit-cover img-fluid rounded-3 mb-3" src={img} alt={alt}></a>
     <div class="d-flex flex-column justify-content-end" style="--bs-bg-opacity: .3;">
-      <h5 class="card-title fs-4 fw-normal">{titleTop}<span class="d-block fw-bold fs-2">{titleBottom}</span></h5>
+      <h5 class="card-title fs-5 fw-normal">{titleTop}</h5>
+      <time class="d-block" datetime={date}>{date}</time>
       <p class="card-text"><small>Last updated 3 mins ago</small></p>
     </div>
   </Note>

@@ -12,7 +12,7 @@
   {
     index: 1,
     titleTop: "PUCMM inician la Semana de Innovación y Propiedad Intelectual, enfocada en la música",
-    titleBottom: "Grado",
+    date: "2024/29/4",
     img: img,
     alt: "SEO",
     link: "https://pucmm.edu.do/academico/oferta-grado",
@@ -20,7 +20,7 @@
   {
     index: 2,
     titleTop: "PUCMM invita a vivir la Semana Santa en oración, reflexión y solidaridad",
-    titleBottom: "Postgrado",
+    date: "2024/29/4",
     img: img,
     alt: "SEO",
     link: "https://pucmm.edu.do/postgrado/Paginas/Programas.aspx",
@@ -28,7 +28,7 @@
   {
     index: 3,
     titleTop: "Testimonios: comunidad de PUCMM se unió en labores de servicio y rescate en tragedia del Jet Set",
-    titleBottom: "Línea",
+    date: "2024/29/4",
     img:img ,
     alt: "SEO",
     link: "https://online.pucmm.edu.do/?utm_source=referral&utm_medium=institutional&utm_campaign=oferta-bottom-banner",
@@ -36,7 +36,7 @@
   {
     index: 4,
     titleTop: "PUCMM, única universidad dominicana en participar en eMerge Americas 2025",
-    titleBottom: "Superior",
+    date: "2024/29/4",
     img:img ,
     alt: "SEO",
     link: "https://tep.pucmm.edu.do/carreras-tecnico-superior",
@@ -48,21 +48,21 @@
   "Explora nuestras opciones y elige el camino que mejor se adapte a tus sueños y aspiraciones.";
 ---
 
- <Section id="academic-programs">
+ <Section id="news-section">
     <SectionTitle sectionTitle={titulo} description={description} />
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4"> 
     {
         cards.map((card) => (
-          <div class="col">
+          
           <NewsNote
             index={card.index}
             titleTop={card.titleTop}
-            titleBottom={card.titleBottom}
+            date={card.date}
             img={card.img}
             alt={card.alt}
             link={card.link}
           /></div>
         ))
       }
-  </div>
+  
 </Section>
